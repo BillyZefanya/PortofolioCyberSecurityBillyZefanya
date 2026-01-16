@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billy Zefanya | Professional Security Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scanlines"></div>
+
+    <nav>
+        <div class="container nav-box">
+            <div class="logo">OPERATIONS<span>REPORT</span></div>
+            <div class="status-indicator"><span class="pulse"></span> ENCRYPTED CONNECTION</div>
+        </div>
+    </nav>
+
+    <!-- HEADER SECTION -->
+    <header class="hero">
+        <div class="container">
+            <h4 class="kicker">Security Vulnerability Assessment</h4>
+            <h1>Project Dibishop <span>Ecosystem</span></h1>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="label">Vulnerability</span>
+                    <span class="val">SQL Injection</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Severity</span>
+                    <span class="val critical">9.8 CRITICAL</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Environment</span>
+                    <span class="val">Production Lab</span>
+                </div>
+            </div>
+            <div class="cvss-panel">
+                <code>Vector String: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</code>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROFILE SECTION (Perkenalan Diri) -->
+    <section class="profile-intro">
+        <div class="container profile-grid">
+            <div class="profile-image">
+                <!-- GANTI DENGAN FOTO KAMU -->
+                <img src="foto-billy.jpg" alt="Billy Zefanya">
+            </div>
+            <div class="profile-details">
+                <span class="sub-label">OFFENSIVE SECURITY RESEARCHER</span>
+                <h2>Billy Zefanya</h2>
+                <p>
+                    Mahasiswa Ilmu Komputer di <strong>Universitas Pertamina</strong> dengan spesialisasi pada <strong>Red Teaming</strong> dan <strong>Offensive Security</strong>. Berpengalaman dalam pengembangan sistem IoT melalui proyek <strong>AIRA</strong> (Wearable Anti-Bullying) yang berhasil meraih pendanaan riset PKM-KC internal.
+                </p>
+                <p>
+                    Memiliki kapabilitas dalam analisis kerentanan sistem, pengujian penetrasi, dan penilaian risiko siber. Berdedikasi dalam mengidentifikasi kelemahan infrastruktur teknologi serta merancang strategi mitigasi keamanan yang komprehensif dan sistematis.
+                </p>
+                <div class="skills-row">
+                    <span><i class="fa-solid fa-user-ninja"></i> Red Teaming</span>
+                    <span><i class="fa-solid fa-bug"></i> Offensive Security</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT (Attack Lifecycle) -->
+    <main class="container">
+        <section class="narrative">
+            <h2><i class="fa-solid fa-terminal"></i> Attack Lifecycle</h2>
+            <div class="timeline">
+                
+                <!-- Step 1 -->
+                <div class="timeline-item" onclick="openGate(1)">
+                    <div class="time-marker">01</div>
+                    <div class="time-content">
+                        <h3>Surface Analysis & Recon</h3>
+                        <p>Pemetaan fungsionalitas aplikasi pada endpoint <code>/cart.php</code>.</p>
+                        <div class="hidden-data">
+                            <div class="image-gallery">
+                                <img src="step1_1.png">
+                            </div>
+                            <p class="tech-detail">
+                                <strong>Analisis Teknis:</strong> Mengidentifikasi parameter <code>code</code> sebagai vektor input dinamis. Kurangnya validasi input memungkinkan injeksi karakter berbahaya ke query database di sisi server.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item" onclick="openGate(2)">
+                    <div class="time-marker">02</div>
+                    <div class="time-content">
+                        <h3>Fuzzing & Error Confirmation</h3>
+                        <p>Injeksi karakter khusus untuk memicu respon anomali.</p>
+                        <div class="hidden-data">
+                            <div class="image-gallery">
+                                <img src="step2_1.png">
+                            </div>
+                            <p class="tech-detail">
+                                <strong>Analisis Teknis:</strong> Payload tanda kutip tunggal (<code>'</code>) menyebabkan kegagalan sintaks SQL. Aplikasi membocorkan pesan error teknis yang mengonfirmasi kerentanan terhadap <em>Error-Based SQL Injection</em>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item" onclick="openGate(3)">
+                    <div class="time-marker">03</div>
+                    <div class="time-content">
+                        <h3>Database Enumeration</h3>
+                        <p>Eksploitasi terautomasi menggunakan SQLMap untuk memetakan DBMS.</p>
+                        <div class="hidden-data">
+                            <div class="image-gallery">
+                                <img src="step3_1.png">
+                            </div>
+                            <p class="tech-detail">
+                                <strong>Analisis Teknis:</strong> Eksekusi automasi berhasil memetakan DBMS target (MySQL >= 5.6) dan mengekstraksi nama database sistem <code>dibimbing-shop</code> secara akurat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item" onclick="openGate(4)">
+                    <div class="time-marker">04</div>
+                    <div class="time-content">
+                        <h3>Sensitive Data Exfiltration</h3>
+                        <p>Ekstraksi kredensial dari tabel <code>admins</code> dan <code>customers</code>.</p>
+                        <div class="hidden-data">
+                            <div class="image-gallery">
+                                <img src="step4_1.png">
+                                <img src="step4_2.png">
+                            </div>
+                            <p class="tech-detail">
+                                <strong>Analisis Teknis:</strong> Ditemukan kebocoran data sensitif (*Sensitive Data Exposure*). Kredensial pengguna dan admin yang tersimpan dalam format plain-text, melanggar standar keamanan penyimpanan data.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-item" onclick="openGate(5)">
+                    <div class="time-marker">05</div>
+                    <div class="time-content">
+                        <h3>Impact Validation (Account Takeover)</h3>
+                        <p>Verifikasi dampak serangan melalui login administratif.</p>
+                        <div class="hidden-data">
+                            <div class="image-gallery">
+                                <img src="step5_1.png">
+                                <img src="step5_2.png">
+                            </div>
+                            <p class="tech-detail">
+                                <strong>Analisis Teknis:</strong> Validasi dampak nyata dengan melakukan pengambilalihan akun (Account Takeover) menggunakan kredensial hasil eksfiltrasi. Akses penuh ke dashboard administratif berhasil didapatkan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Remediation -->
+        <section class="remediation">
+            <h2>Mitigation Strategy</h2>
+            <div class="remedy-grid">
+                <div class="remedy-card">
+                    <h4>Parameterized Queries</h4>
+                    <p>Mencegah interpretasi input user sebagai perintah SQL melalui implementasi Prepared Statements.</p>
+                </div>
+                <div class="remedy-card">
+                    <h4>Strong Password Hashing</h4>
+                    <p>Mengamankan data kredensial menggunakan algoritma hashing standar industri seperti Bcrypt atau Argon2.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Professional Modal -->
+    <div id="securityModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Technical Evidence</h2>
+                <span class="close" onclick="closeGate()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="modalGallery" class="modal-gallery-box"></div>
+                <div id="modalDesc" class="desc-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Billy Zefanya | Dibimbing Bootcamp Batch 4 | Professional Pentest Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
