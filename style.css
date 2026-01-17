@@ -90,3 +90,63 @@ footer { text-align: center; padding: 50px; font-size: 12px; border-top: 1px sol
     .hero h1 { font-size: 2.5rem; }
     .remedy-grid { grid-template-columns: 1fr; }
 }
+
+/* --- TOOLS UTILIZED SECTION --- */
+.tools-utilized {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.2);
+}
+
+.tool-heading {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.tool-heading i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.tool-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s ease;
+}
+
+.tool-item:hover {
+    border-color: var(--accent);
+    background: rgba(59, 130, 246, 0.08);
+    transform: translateY(-3px);
+}
+
+.tool-item img {
+    width: 45px; /* Foto kecil sesuai permintaan */
+    height: 45px;
+    object-fit: contain;
+}
+
+.tool-meta h4 {
+    font-size: 0.95rem;
+    color: #fff;
+    margin-bottom: 3px;
+}
+
+.tool-meta p {
+    font-size: 0.75rem; /* Keterangan kecil */
+    color: #9ca3af;
+    line-height: 1.3;
+}
